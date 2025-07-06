@@ -20,6 +20,12 @@ def save_keys(keys):
 def generate_key(length=16):
     return ''.join(random.choices(string.ascii_uppercase + string.digits, k=length))
 
+from flask import render_template
+
+@app.route('/')
+def home():
+    return render_template("index.html")
+
 @app.route("/")
 def home():
     return render_template("index.html")
